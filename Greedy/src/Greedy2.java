@@ -32,16 +32,21 @@ public class Greedy2 {
 		/*Arrays.sort(data);
 		int big1 = data[N-1];
 		int big2 = data[N-2];*/
-		
 		int result = 0;
-		while(M>0) {
+		
+		int count=0;
+		count = (M /(K+1))*K;
+		count += M %(K+1);
+		result = count*big1 + (M-count)*big2;
+		
+		/*while(M>0) {
 			result += big1*K;
 			M-=K;
 			if(M>0) {
 				result+=big2;
 				M-=1;
 			}
-		}
+		}*/
 		System.out.println(result);
 	}
 

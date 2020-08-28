@@ -1,4 +1,7 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class Greedy2 {
@@ -14,12 +17,22 @@ public class Greedy2 {
 		N = scan.nextInt();
 		M = scan.nextInt();
 		K = scan.nextInt();
-		int[] data = new int[N];
+		List<Integer> data = new ArrayList<>();
+		for(int i=0; i<N; i++)
+			data.add(scan.nextInt());
+		
+		/*int[] data = new int[N];
 		for(int i=0; i<data.length; i++)
-			data[i] = scan.nextInt();
-		Arrays.sort(data);
-		int big1 = data[data.length-1]; 
-		int big2 = data[data.length-2];
+			data[i] = scan.nextInt();*/
+		
+		Collections.sort(data);
+		int big1 = data.get(N-1); 
+		int big2 = data.get(N-2);
+		
+		/*Arrays.sort(data);
+		int big1 = data[N-1];
+		int big2 = data[N-2];*/
+		
 		int result = 0;
 		while(M>0) {
 			result += big1*K;

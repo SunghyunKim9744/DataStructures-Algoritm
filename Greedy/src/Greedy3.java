@@ -11,7 +11,18 @@ public class Greedy3 {
 		Scanner scan = new Scanner(System.in);
 		int N = scan.nextInt();
 		int M = scan.nextInt();
-		int[][] CARD = new int[N][M];
+		int result = 0;
+		for(int i=0; i<N; i++) {
+			int value = 10001;
+			for(int j=0; j<M; j++) {
+				int x = scan.nextInt();
+				value = Math.min(value,x);
+			}
+			result = Math.max(result, value);
+		}
+		
+		System.out.println(result);
+		/*int[][] CARD = new int[N][M];
 		for(int i=0; i<CARD.length; i++)
 			for(int j=0; j<CARD[0].length; j++)
 				CARD[i][j] = scan.nextInt();
@@ -26,7 +37,7 @@ public class Greedy3 {
 		}
 		Arrays.sort(min);
 		int result = min[N-1];
-		System.out.println(result);
+		System.out.println(result);*/
 
 	}
 
